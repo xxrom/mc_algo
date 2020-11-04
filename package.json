@@ -2,11 +2,15 @@
   "name": "mc_algo",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
-,
-  "nodemonConfig": { "delay": "1" },
-  "scripts": 
-  {
-        "dev": "nodemon --exec python3 main.py ./main.py" 
-  }, "dependencies": { "nodemon": "*" } 
+  "license": "MIT",
+  "nodemonConfig": {
+    "delay": "1"
+  },
+  "scripts": {
+    "dev-py": "nodemon --exec python3 main.py ./main.py",
+    "dev-js": "nodemon --exec node  main.js ./main.js"
+  },
+  "dependencies": {
+    "nodemon": "*"
+  }
 }
