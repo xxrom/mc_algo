@@ -9,7 +9,8 @@
   "scripts": {
     "dev-py": "nodemon --exec python3 main.py ./main.py",
     "dev-js": "nodemon --exec node  main.js ./main.js",
-    "d6": "nodemon --exec python3 6_arrays.py ./6_arrays.py"
+    "d6": "nodemon --exec python3 6_arrays.py ./6_arrays.py",
+    "d68": "nodemon --exec node 68_reverse_string.js ./68_reverse_string.js"
   },
   "dependencies": {
     "nodemon": "*"
