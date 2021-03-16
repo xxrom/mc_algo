@@ -11,7 +11,8 @@
     "dev-js": "nodemon --exec node  main.js ./main.js",
     "d6": "nodemon --exec python3 6_arrays.py ./6_arrays.py",
     "d68": "nodemon --exec node 68_reverse_string.js ./68_reverse_string.js",
-    "d70": "nodemon --exec python3 70_mergeSortedArrays.py ./70_mergeSortedArrays.py"
+    "d70": "nodemon --exec python3 70_mergeSortedArrays.py ./70_mergeSortedArrays.py",
+    "d79": "nodemon --exec python3 79_hashTable_hash-function.py ./79_hashTable_hash-function.py"
   },
   "dependencies": {
     "nodemon": "*"
