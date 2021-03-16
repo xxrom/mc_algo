@@ -1,3 +1,16 @@
+'''
+access - None (you can't access 'i' item, 
+          because there are no order in hash tables, 
+          it's messy to understand why it is not defined ...)
+search - O(1) (worse - O(N))
+insert - O(1) (worser - O(N), 
+          because it could check for the same key, 
+          or it could try to find an empty spot 
+          in table to place new data in)
+delete - O(1) (worse - O(N))
+'''
+
+
 class HashTable:
 
   def __init__(self, size):
@@ -6,9 +19,9 @@ class HashTable:
   def _hash(self, key):
     hash = 0
 
-    for charItem in key:
+    for index, charItem in enumerate(key):
       # print(charItem, ord(charItem), len(self.data))
-      hash = (hash + ord(charItem)) % len(self.data)
+      hash = (hash + ord(charItem) * index) % len(self.data)
 
     return hash
 
@@ -24,7 +37,9 @@ class HashTable:
 
     ans = None
 
-    for item in self.data[dataIndex]:
+    currentBucket = self.data[dataIndex]
+
+    for item in currentBucket:
       if item['key'] == key:
         ans = item['value']
 
@@ -40,3 +55,4 @@ myHashTable.set('banana2', 10999)
 
 print(myHashTable.get('banana'))
 print(myHashTable.get('banana2'))
+print(myHashTable.get('ba2'))
