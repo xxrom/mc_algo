@@ -31,7 +31,7 @@ class HashTable:
   def set(self, key, value):
     dataIndex = self._hash(str(key))
 
-    print(dataIndex)
+    # print(dataIndex)
 
     self.data[dataIndex].append({'key': key, 'value': value})
 
@@ -51,7 +51,7 @@ class HashTable:
   def keys(self):
     self.keys = []
     for values in self.data:
-      print('values', values)
+      # print('values', values)
       for value in values:
         self.keys.append(value['key'])
 
@@ -68,5 +68,36 @@ myHashTable.set('banana2', 10999)
 print(myHashTable.get('banana'))
 print(myHashTable.get('banana2'))
 print(myHashTable.get('ba2'))
-
 print(myHashTable.keys())
+
+# google question
+# return item which return first in array, otherwise return None
+
+
+class Solution:
+
+  def getFirstRepeatedItem(self, array):
+    myHashSeen = HashTable(500)
+
+    for num in array:
+      if myHashSeen.get(num) == None:
+        myHashSeen.set(num, num)
+      else:
+        return num
+    return None
+
+
+my = Solution()
+
+a = [2, 5, 1, 2, 3, 5, 1]
+trueAns = 2
+
+a = [2, 5, 1, 1, 2, 3, 5, 1]
+trueAns = 1
+
+a = [2, 5, 1]
+trueAns = None
+
+ans = my.getFirstRepeatedItem(a)
+
+print('Ans ', ans, ans == trueAns)
