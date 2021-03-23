@@ -14,7 +14,10 @@ delete - O(1) (worse - O(N))
 class HashTable:
 
   def __init__(self, size):
-    self.data = [[]] * size
+    self.data = []
+
+    for index in range(size):
+      self.data.append([])
 
   def _hash(self, key):
     hash = 0
@@ -45,6 +48,15 @@ class HashTable:
 
     return ans
 
+  def keys(self):
+    self.keys = []
+    for values in self.data:
+      print('values', values)
+      for value in values:
+        self.keys.append(value['key'])
+
+    return self.keys
+
 
 myHashTable = HashTable(50)
 
@@ -56,3 +68,5 @@ myHashTable.set('banana2', 10999)
 print(myHashTable.get('banana'))
 print(myHashTable.get('banana2'))
 print(myHashTable.get('ba2'))
+
+print(myHashTable.keys())
